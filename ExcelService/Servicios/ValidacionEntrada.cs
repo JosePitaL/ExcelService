@@ -10,7 +10,7 @@ namespace ExcelService.Servicios
 {
     public static class ValidacionEntrada
     {
-        public static void Validar(Application excel_entrada, int fila, string PathNoAptos, string Fichero, out Trabajador trabajador)
+        public static void Validar(Application excel_entrada, int fila, string PathNoAptos, string Fichero, int Ticket, out Trabajador trabajador)
         {
             List<Modelo.Error> errores = new List<Modelo.Error>();
             bool Con_Errores = false;
@@ -23,7 +23,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 1
+                    Numero_Columna = excel_entrada.Cells[2, 1].Value
                 });
                 Con_Errores = true;
             }
@@ -39,7 +39,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 2
+                    Numero_Columna = excel_entrada.Cells[2, 2].Value
                 });
                 Con_Errores = true;
             }
@@ -55,7 +55,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 3
+                    Numero_Columna = excel_entrada.Cells[2, 3].Value
                 });
                 Con_Errores = true;
             }
@@ -71,7 +71,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 4
+                    Numero_Columna = excel_entrada.Cells[2, 4].Value
                 });
                 Con_Errores = true;
             }
@@ -87,7 +87,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 5
+                    Numero_Columna = excel_entrada.Cells[2, 5].Value
                 });
                 Con_Errores = true;
             }
@@ -103,7 +103,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 6
+                    Numero_Columna = excel_entrada.Cells[2, 6].Value
                 });
                 Con_Errores = true;
             }
@@ -119,7 +119,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 7
+                    Numero_Columna = excel_entrada.Cells[2, 7].Value
                 });
                 Con_Errores = true;
             }
@@ -145,7 +145,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 9
+                    Numero_Columna = excel_entrada.Cells[2, 9].Value
                 });
                 Con_Errores = true;
             }
@@ -161,7 +161,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 10
+                    Numero_Columna = excel_entrada.Cells[2, 10].Value
                 });
                 Con_Errores = true;
             }
@@ -177,7 +177,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 11
+                    Numero_Columna = excel_entrada.Cells[2, 11].Value
                 });
                 Con_Errores = true;
             }
@@ -193,7 +193,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 12
+                    Numero_Columna = excel_entrada.Cells[2, 12].Value
                 });
                 Con_Errores = true;
             }
@@ -209,7 +209,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 13
+                    Numero_Columna = excel_entrada.Cells[2, 13].Value
                 });
                 Con_Errores = true;
             }
@@ -225,7 +225,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 14
+                    Numero_Columna = excel_entrada.Cells[2, 14].Value
                 });
                 Con_Errores = true;
             }
@@ -241,7 +241,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 15
+                    Numero_Columna = excel_entrada.Cells[2, 15].Value
                 });
                 Con_Errores = true;
             }
@@ -257,7 +257,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 16
+                    Numero_Columna = excel_entrada.Cells[2, 16].Value
                 });
                 Con_Errores = true;
             }
@@ -273,7 +273,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 17
+                    Numero_Columna = excel_entrada.Cells[2, 17].Value
                 });
                 Con_Errores = true;
             }
@@ -329,7 +329,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 22
+                    Numero_Columna = excel_entrada.Cells[2, 22].Value
                 });
                 Con_Errores = true;
             }
@@ -365,7 +365,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 25
+                    Numero_Columna = excel_entrada.Cells[2, 25].Value
                 });
                 Con_Errores = true;
             }
@@ -381,7 +381,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 26
+                    Numero_Columna = excel_entrada.Cells[2, 26].Value
                 });
                 Con_Errores = true;
             }
@@ -397,7 +397,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 27
+                    Numero_Columna = excel_entrada.Cells[2, 27].Value
                 });
                 Con_Errores = true;
             }
@@ -413,7 +413,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 28
+                    Numero_Columna = excel_entrada.Cells[2, 28].Value
                 });
                 Con_Errores = true;
             }
@@ -429,7 +429,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 29
+                    Numero_Columna = excel_entrada.Cells[2, 29].Value
                 });
                 Con_Errores = true;
             }
@@ -455,7 +455,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 31
+                    Numero_Columna = excel_entrada.Cells[2, 31].Value
                 });
                 Con_Errores = true;
             }
@@ -471,7 +471,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 32
+                    Numero_Columna = excel_entrada.Cells[2, 32].Value
                 });
                 Con_Errores = true;
             }
@@ -497,7 +497,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 34
+                    Numero_Columna = excel_entrada.Cells[2, 34].Value
                 });
                 Con_Errores = true;
             }
@@ -513,7 +513,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 35
+                    Numero_Columna = excel_entrada.Cells[2, 35].Value
                 });
                 Con_Errores = true;
             }
@@ -529,7 +529,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 36
+                    Numero_Columna = excel_entrada.Cells[2, 36].Value
                 });
                 Con_Errores = true;
             }
@@ -545,7 +545,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 37
+                    Numero_Columna = excel_entrada.Cells[2, 37].Value
                 });
                 Con_Errores = true;
             }
@@ -591,7 +591,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 41
+                    Numero_Columna = excel_entrada.Cells[2, 41].Value
                 });
                 Con_Errores = true;
             }
@@ -607,7 +607,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 42
+                    Numero_Columna = excel_entrada.Cells[2, 42].Value
                 });
                 Con_Errores = true;
             }
@@ -623,7 +623,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 43
+                    Numero_Columna = excel_entrada.Cells[2, 43].Value
                 });
                 Con_Errores = true;
             }
@@ -639,7 +639,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 44
+                    Numero_Columna = excel_entrada.Cells[2, 44].Value
                 });
                 Con_Errores = true;
             }
@@ -655,7 +655,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 45
+                    Numero_Columna = excel_entrada.Cells[2, 45].Value
                 });
                 Con_Errores = true;
             }
@@ -671,7 +671,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 46
+                    Numero_Columna = excel_entrada.Cells[2, 46].Value
                 });
                 Con_Errores = true;
             }
@@ -717,7 +717,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 50
+                    Numero_Columna = excel_entrada.Cells[2, 50].Value
                 });
                 Con_Errores = true;
             }
@@ -733,7 +733,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 51
+                    Numero_Columna = excel_entrada.Cells[2, 51].Value
                 });
                 Con_Errores = true;
             }
@@ -749,7 +749,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 52
+                    Numero_Columna = excel_entrada.Cells[2, 52].Value
                 });
                 Con_Errores = true;
             }
@@ -765,7 +765,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 53
+                    Numero_Columna = excel_entrada.Cells[2, 53].Value
                 });
                 Con_Errores = true;
             }
@@ -781,7 +781,7 @@ namespace ExcelService.Servicios
                 errores.Add(new Modelo.Error()
                 {
                     Numero_Fila = fila,
-                    Numero_Columna = 54
+                    Numero_Columna = excel_entrada.Cells[2, 54].Value
                 });
                 Con_Errores = true;
             }
@@ -799,7 +799,7 @@ namespace ExcelService.Servicios
                     errores.Add(new Modelo.Error()
                     {
                         Numero_Fila = fila,
-                        Numero_Columna = 55
+                        Numero_Columna = excel_entrada.Cells[2, 55].Value
                     });
                     Con_Errores = true;
                 }
@@ -853,7 +853,7 @@ namespace ExcelService.Servicios
                     errores.Add(new Modelo.Error()
                     {
                         Numero_Fila = fila,
-                        Numero_Columna = i
+                        Numero_Columna = excel_entrada.Cells[2, i].Value
                     });
                     Con_Errores = true;
                 }
@@ -870,7 +870,7 @@ namespace ExcelService.Servicios
             if(Con_Errores)
             {
                 trabajador = null;
-                LogErrores.CrearLogErrores(errores, PathNoAptos, Fichero);
+                LogErrores.CrearLogErrores(errores, PathNoAptos, Fichero, Ticket);
             }
         }
     }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ExcelService.Modelo
 {
-    public class Error
+    public class Tck_estados
     {
-        public int Numero_Fila { get; set; }
-        public string Numero_Columna { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
     }
 }

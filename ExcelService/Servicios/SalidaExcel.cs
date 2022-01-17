@@ -10,7 +10,7 @@ namespace ExcelService.Servicios
 {
     public static class SalidaExcel
     {
-        public static void CrearExcelSalida(List<Trabajador> trabajadores, string PathExcelSalida, string PathAptos, string Ticket)
+        public static void CrearExcelSalida(List<Trabajador> trabajadores, string PathExcelSalida, string PathAptos, int Ticket)
         {
             var excel_salida = new Application();
             excel_salida.Visible = true;

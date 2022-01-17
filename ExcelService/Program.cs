@@ -4,9 +4,11 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper;
 using ExcelService.Modelo;
 using ExcelService.Servicios;
 using Microsoft.Office.Interop.Excel;
+using MySql.Data.MySqlClient;
 
 namespace ExcelService
 {
@@ -19,7 +21,7 @@ namespace ExcelService
             //ARGUMENTOS
             string PathAptos = @"C:\Users\34645\Desktop\PAYDISTRICT\APTO\";
             string PathNoAptos = @"C:\Users\34645\Desktop\PAYDISTRICT\NO APTO\";
-            string Ticket = "37";
+            int Ticket = 37;
             string PathExcelEntrada = @"C:\Users\34645\Desktop\PAYDISTRICT\PLANTILLA PRUEBA OZONA.xlsm";
             string PathExcelSalida = @"C:\Users\34645\Desktop\PAYDISTRICT\Plantilla alta masiva - copia.xlsx";
 
@@ -43,7 +45,7 @@ namespace ExcelService
                 else
                 {
 
-                    ValidacionEntrada.Validar(excel_entrada, fila, PathNoAptos, PathExcelEntrada.Split('\\').Last(),  out trabajador);
+                    ValidacionEntrada.Validar(excel_entrada, fila, PathNoAptos, PathExcelEntrada.Split('\\').Last(), Ticket,  out trabajador);
                     if (trabajador != null)
                     {
                         trabajadores.Add(trabajador);
@@ -75,6 +77,10 @@ namespace ExcelService
                 if (proceso.ProcessName.ToUpper().Contains("EXCEL"))
                     proceso.Kill();
             }
+
+           
+            
+
             
         }
     }

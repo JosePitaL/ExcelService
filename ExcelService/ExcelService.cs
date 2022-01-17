@@ -24,7 +24,7 @@ namespace ExcelService
         [Category("Input")]
         public InArgument<string> _PathExcelSalida { get; set; }
         [Category("Input")]
-        public InArgument<string> _Ticket { get; set; }
+        public InArgument<int> _Ticket { get; set; }
 
 
         protected override void Execute(CodeActivityContext context)
@@ -32,7 +32,7 @@ namespace ExcelService
             //ARGUMENTOS
             string PathAptos = _PathAptos.Get(context);
             string PathNoAptos = _PathNoAptos.Get(context);
-            string Ticket = _Ticket.Get(context);
+            int Ticket = _Ticket.Get(context);
             string PathExcelEntrada = _PathExcelEntrada.Get(context);
             string PathExcelSalida = _PathExcelSalida.Get(context);
 
@@ -56,7 +56,7 @@ namespace ExcelService
                 else
                 {
 
-                    ValidacionEntrada.Validar(excel_entrada, fila, PathNoAptos, PathExcelEntrada.Split('\\').Last(), out trabajador);
+                    ValidacionEntrada.Validar(excel_entrada, fila, PathNoAptos, PathExcelEntrada.Split('\\').Last(), Ticket, out trabajador);
                     if (trabajador != null)
                     {
                         trabajadores.Add(trabajador);
