@@ -10,7 +10,7 @@ namespace ExcelService.Servicios
 {
     public static class ValidacionEntrada
     {
-        public static void Validar(Application excel_entrada, int fila, string PathNoAptos, string Fichero, int Ticket, out Trabajador trabajador)
+        public static void Validar(Application excel_entrada, int fila, string PathNoAptos, string Fichero, int Ticket, int IdBaseDatos, out Trabajador trabajador)
         {
             List<Modelo.Error> errores = new List<Modelo.Error>();
             bool Con_Errores = false;
@@ -77,7 +77,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Tipo_Documento = excel_entrada.Cells[fila, 4].Value;
+                trabajador.Tipo_Documento = excel_entrada.Cells[fila, 4].Value.ToString();
             }
 
             //Documento
@@ -93,7 +93,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Documento = excel_entrada.Cells[fila, 5].Value;
+                trabajador.Documento = excel_entrada.Cells[fila, 5].Value.ToString();
             }
 
             //Nombre
@@ -109,7 +109,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Nombre = excel_entrada.Cells[fila, 6].Value;
+                trabajador.Nombre = excel_entrada.Cells[fila, 6].Value.ToString();
             }
 
             //Primer_Apellido
@@ -125,7 +125,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Primer_Apellido = excel_entrada.Cells[fila, 7].Value;
+                trabajador.Primer_Apellido = excel_entrada.Cells[fila, 7].Value.ToString();
             }
 
             //Segundo_Apellido
@@ -135,7 +135,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Segundo_Apellido = excel_entrada.Cells[fila, 8].Value;
+                trabajador.Segundo_Apellido = excel_entrada.Cells[fila, 8].Value.ToString();
             }
 
             //Sexo
@@ -151,7 +151,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Sexo = excel_entrada.Cells[fila, 9].Value;
+                trabajador.Sexo = excel_entrada.Cells[fila, 9].Value.ToString();
             }
 
             //Naf
@@ -167,7 +167,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Naf = excel_entrada.Cells[fila, 10].Value;
+                trabajador.Naf = excel_entrada.Cells[fila, 10].Value.ToString();
             }
 
             //Fecha_Alta
@@ -215,7 +215,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Nacionalidad = excel_entrada.Cells[fila, 13].Value;
+                trabajador.Nacionalidad = excel_entrada.Cells[fila, 13].Value.ToString();
             }
 
             //Email_Profesional
@@ -231,7 +231,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Email_Profesional = excel_entrada.Cells[fila, 14].Value;
+                trabajador.Email_Profesional = excel_entrada.Cells[fila, 14].Value.ToString();
             }
 
             //Codigo_Convenio
@@ -247,7 +247,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Codigo_Convenio = excel_entrada.Cells[fila, 15].Value;
+                trabajador.Codigo_Convenio = excel_entrada.Cells[fila, 15].Value.ToString();
             }
 
             //Codigo_Categoria
@@ -263,7 +263,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Codigo_Categoria = excel_entrada.Cells[fila, 16].Value;
+                trabajador.Codigo_Categoria = excel_entrada.Cells[fila, 16].Value.ToString();
             }
 
             //Codigo_Puesto
@@ -279,7 +279,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Codigo_Puesto = excel_entrada.Cells[fila, 17].Value;
+                trabajador.Codigo_Puesto = double.Parse(excel_entrada.Cells[fila, 17].Value.ToString());
             }
 
             //Grupo_Antiguedad
@@ -289,7 +289,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Grupo_Antiguedad = excel_entrada.Cells[fila, 18].Value;
+                trabajador.Grupo_Antiguedad = excel_entrada.Cells[fila, 18].Value.ToString();
             }
 
             //Grupo_Pagas_Extra
@@ -299,7 +299,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Grupo_Pagas_Extra = excel_entrada.Cells[fila, 19].Value;
+                trabajador.Grupo_Pagas_Extra = excel_entrada.Cells[fila, 19].Value.ToString();
             }
 
             //Grupo_Complemento_It
@@ -309,7 +309,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Grupo_Complemento_It = excel_entrada.Cells[fila, 20].Value;
+                trabajador.Grupo_Complemento_It = excel_entrada.Cells[fila, 20].Value.ToString();
             }
 
             //Regimen
@@ -319,7 +319,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Regimen = excel_entrada.Cells[fila, 21].Value;
+                trabajador.Regimen = excel_entrada.Cells[fila, 21].Value.ToString();
             }
 
             //Grupo_Tarifa
@@ -335,7 +335,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Grupo_Tarifa = excel_entrada.Cells[fila, 22].Value;
+                trabajador.Grupo_Tarifa = excel_entrada.Cells[fila, 22].Value.ToString();
             }
 
             //Tipo_Cobro
@@ -345,7 +345,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Tipo_Cobro = excel_entrada.Cells[fila, 23].Value;
+                trabajador.Tipo_Cobro = excel_entrada.Cells[fila, 23].Value.ToString();
             }
 
             //Ocupacion_Tgss
@@ -355,7 +355,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Ocupacion_Tgss = excel_entrada.Cells[fila, 24].Value;
+                trabajador.Ocupacion_Tgss = excel_entrada.Cells[fila, 24].Value.ToString();
             }
 
             //Entidad
@@ -371,7 +371,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Entidad = excel_entrada.Cells[fila, 25].Value;
+                trabajador.Entidad = excel_entrada.Cells[fila, 25].Value.ToString();
             }
 
             //Agencia
@@ -387,7 +387,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Agencia = excel_entrada.Cells[fila, 26].Value;
+                trabajador.Agencia = excel_entrada.Cells[fila, 26].Value.ToString();
             }
 
             //Dc
@@ -403,7 +403,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Dc = excel_entrada.Cells[fila, 27].Value;
+                trabajador.Dc = excel_entrada.Cells[fila, 27].Value.ToString();
             }
 
             //Cuenta
@@ -419,7 +419,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Cuenta = excel_entrada.Cells[fila, 28].Value;
+                trabajador.Cuenta = excel_entrada.Cells[fila, 28].Value.ToString();
             }
 
             //Iban
@@ -435,7 +435,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Iban = excel_entrada.Cells[fila, 29].Value;
+                trabajador.Iban = excel_entrada.Cells[fila, 29].Value.ToString();
             }
 
             //Swift_Bic
@@ -445,7 +445,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Swift_Bic = excel_entrada.Cells[fila, 30].Value;
+                trabajador.Swift_Bic = excel_entrada.Cells[fila, 30].Value.ToString();
             }
 
             //Tipo_Contrato
@@ -461,7 +461,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Tipo_Contrato = excel_entrada.Cells[fila, 31].Value;
+                trabajador.Tipo_Contrato = excel_entrada.Cells[fila, 31].Value.ToString();
             }
 
             //Tipo_Cotizacion
@@ -477,7 +477,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Tipo_Cotizacion = excel_entrada.Cells[fila, 32].Value;
+                trabajador.Tipo_Cotizacion = excel_entrada.Cells[fila, 32].Value.ToString();
             }
 
             //Tipo_Bruto_Anual
@@ -487,7 +487,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Tipo_Bruto_Anual = excel_entrada.Cells[fila, 33].Value;
+                trabajador.Tipo_Bruto_Anual = excel_entrada.Cells[fila, 33].Value.ToString();
             }
 
             //Bruto_Anual
@@ -503,7 +503,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Bruto_Anual = excel_entrada.Cells[fila, 34].Value;
+                trabajador.Bruto_Anual = double.Parse(excel_entrada.Cells[fila, 34].Value.ToString());
             }
 
             //Cno_Ocupacion
@@ -519,7 +519,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Cno_Ocupacion = excel_entrada.Cells[fila, 35].Value;
+                trabajador.Cno_Ocupacion = excel_entrada.Cells[fila, 35].Value.ToString();
             }
 
             //Nivel_Formativo
@@ -535,7 +535,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Nivel_Formativo = excel_entrada.Cells[fila, 36].Value;
+                trabajador.Nivel_Formativo = excel_entrada.Cells[fila, 36].Value.ToString();
             }
 
             //Fecha_Inicio_Contrato
@@ -561,7 +561,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Meses = excel_entrada.Cells[fila, 38].Value;
+                trabajador.Meses = double.Parse(excel_entrada.Cells[fila, 38].Value);
             }
 
             //Dias
@@ -571,7 +571,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Dias = excel_entrada.Cells[fila, 39].Value;
+                trabajador.Dias = double.Parse(excel_entrada.Cells[fila, 39].Value);
             }
 
             //Fecha_Fin_Contrato
@@ -645,7 +645,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Tipo_Via = excel_entrada.Cells[fila, 44].Value;
+                trabajador.Tipo_Via = excel_entrada.Cells[fila, 44].Value.ToString();
             }
 
             //Via_Publica
@@ -661,7 +661,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Via_Publica = excel_entrada.Cells[fila, 45].Value;
+                trabajador.Via_Publica = excel_entrada.Cells[fila, 45].Value.ToString();
             }
 
             //Numero
@@ -677,7 +677,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Numero = excel_entrada.Cells[fila, 46].Value;
+                trabajador.Numero = excel_entrada.Cells[fila, 46].Value.ToString();
             }
 
             //Escalera
@@ -687,27 +687,27 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Escalera = excel_entrada.Cells[fila, 47].Value;
+                trabajador.Escalera = excel_entrada.Cells[fila, 47].Value.ToString();
             }
 
             //Piso
             if (excel_entrada.Cells[fila, 48].Value is null)
             {
-                trabajador.Piso = -1;
+                trabajador.Piso = "";
             }
             else
             {
-                trabajador.Piso = excel_entrada.Cells[fila, 48].Value;
+                trabajador.Piso = excel_entrada.Cells[fila, 48].Value.ToString();
             }
 
             //Puerta
             if (excel_entrada.Cells[fila, 49].Value is null)
             {
-                trabajador.Puerta = -1;
+                trabajador.Puerta = "";
             }
             else
             {
-                trabajador.Puerta = excel_entrada.Cells[fila, 49].Value;
+                trabajador.Puerta = excel_entrada.Cells[fila, 49].Value.ToString();
             }
 
             //Pais
@@ -723,7 +723,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Pais = excel_entrada.Cells[fila, 50].Value;
+                trabajador.Pais = excel_entrada.Cells[fila, 50].Value.ToString();
             }
 
             //Codigo_Postal
@@ -739,7 +739,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Codigo_Postal = excel_entrada.Cells[fila, 51].Value;
+                trabajador.Codigo_Postal = excel_entrada.Cells[fila, 51].Value.ToString();
             }
 
             //Indicador_No_Residente
@@ -755,7 +755,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Indicador_No_Residente = excel_entrada.Cells[fila, 52].Value;
+                trabajador.Indicador_No_Residente = excel_entrada.Cells[fila, 52].Value.ToString();
             }
 
             //Clave_Percepcion
@@ -771,7 +771,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Clave_Percepcion = excel_entrada.Cells[fila, 53].Value;
+                trabajador.Clave_Percepcion = excel_entrada.Cells[fila, 53].Value.ToString();
             }
 
             //Situacion_Familiar
@@ -787,7 +787,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Situacion_Familiar = excel_entrada.Cells[fila, 54].Value;
+                trabajador.Situacion_Familiar = excel_entrada.Cells[fila, 54].Value.ToString();
             }
 
             //Documento_Conyugue
@@ -806,7 +806,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Documento_Conyugue = excel_entrada.Cells[fila, 5].Value;
+                trabajador.Documento_Conyugue = excel_entrada.Cells[fila, 5].Value.ToString();
             }
 
             //Discapacidad
@@ -826,7 +826,7 @@ namespace ExcelService.Servicios
             }
             else
             {
-                trabajador.Con_Ayuda = excel_entrada.Cells[fila, 57].Value;
+                trabajador.Con_Ayuda = excel_entrada.Cells[fila, 57].Value.ToString();
             }
 
             //Descendientes
@@ -861,7 +861,7 @@ namespace ExcelService.Servicios
                 {
                     trabajador.Imputaciones.Add(new Imputacion()
                     {
-                        _Imputacion = excel_entrada.Cells[fila, i].Value,
+                        _Imputacion = excel_entrada.Cells[fila, i].Value.ToString(),
                         Porcentaje = excel_entrada.Cells[fila, i + 1].Value,
                     });
                 }
@@ -870,7 +870,7 @@ namespace ExcelService.Servicios
             if(Con_Errores)
             {
                 trabajador = null;
-                LogErrores.CrearLogErrores(errores, PathNoAptos, Fichero, Ticket);
+                LogErrores.CrearLogErrores(errores, PathNoAptos, Fichero, Ticket, IdBaseDatos);
             }
         }
     }

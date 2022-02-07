@@ -10,7 +10,7 @@ namespace ExcelService.Servicios
 {
     public static class SalidaExcel
     {
-        public static void CrearExcelSalida(List<Trabajador> trabajadores, string PathExcelSalida, string PathAptos, int Ticket)
+        public static string CrearExcelSalida(List<Trabajador> trabajadores, string PathExcelSalida, string PathAptos, int Ticket, int contadorTrabajadores)
         {
             var excel_salida = new Application();
             excel_salida.Visible = true;
@@ -105,11 +105,11 @@ namespace ExcelService.Servicios
                 {
                     excel_salida.Sheets["Datos Domicilio"].Cells[fila, 7].Value = trabajador.Escalera;
                 }
-                if (trabajador.Piso != -1)
+                if (!trabajador.Piso.Equals(""))
                 {
                     excel_salida.Sheets["Datos Domicilio"].Cells[fila, 8].Value = trabajador.Piso;
                 }
-                if (trabajador.Puerta != -1)
+                if (!trabajador.Puerta.Equals(""))
                 {
                     excel_salida.Sheets["Datos Domicilio"].Cells[fila, 9].Value = trabajador.Puerta;
                 }
@@ -175,8 +175,10 @@ namespace ExcelService.Servicios
                     fila++;
                 }
             }
-            pestañas_excel_salida.SaveAs(PathAptos + codigoempresa + "_" + Ticket + "_" + DateTime.Now.ToString("ddMMyyyyHHmm") + "_" + trabajadores.Count);
-            pestañas_excel_salida.Close();
+            string nombrefichero = codigoempresa + "_" + Ticket + "_" + DateTime.Now.ToString("ddMMyyyyHHmm") + "_" + contadorTrabajadores;
+            pestañas_excel_salida.SaveAs(PathAptos +  nombrefichero);
+            pestañas_excel_salida.Close(false);
+            return nombrefichero;
         }       
     }
 }

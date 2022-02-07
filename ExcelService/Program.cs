@@ -28,6 +28,7 @@ namespace ExcelService
             bool registro = true;
             bool Con_Errores = false;
             int fila = 3;
+            int contadorTrabajadores = 1;
             Trabajador trabajador;
             List<Trabajador> trabajadores = new List<Trabajador>();
 
@@ -45,7 +46,7 @@ namespace ExcelService
                 else
                 {
 
-                    ValidacionEntrada.Validar(excel_entrada, fila, PathNoAptos, PathExcelEntrada.Split('\\').Last(), Ticket,  out trabajador);
+                    ValidacionEntrada.Validar(excel_entrada, fila, PathNoAptos, PathExcelEntrada.Split('\\').Last(), Ticket, 1,  out trabajador);
                     if (trabajador != null)
                     {
                         trabajadores.Add(trabajador);
@@ -57,6 +58,7 @@ namespace ExcelService
                     }
 
                 }
+                contadorTrabajadores++;
                 fila++;
             }
 
@@ -69,19 +71,14 @@ namespace ExcelService
             else
             {
                 pestañas_excel_entrada.Close();
-                SalidaExcel.CrearExcelSalida(trabajadores, PathExcelSalida, PathAptos, Ticket);
+                SalidaExcel.CrearExcelSalida(trabajadores, PathExcelSalida, PathAptos, Ticket, contadorTrabajadores);
             }
 
             foreach (var proceso in Process.GetProcesses())
             {
                 if (proceso.ProcessName.ToUpper().Contains("EXCEL"))
                     proceso.Kill();
-            }
-
-           
-            
-
-            
+            }  
         }
     }
 }

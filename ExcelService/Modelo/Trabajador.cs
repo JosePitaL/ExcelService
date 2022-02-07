@@ -54,10 +54,10 @@ namespace ExcelService.Modelo
         public DateTime? Fecha_Antiguedad_Empresa { get; set; }
         public string Tipo_Via { get; set; }
         public string Via_Publica { get; set; }
-        public double? Numero { get; set; }
+        public string Numero { get; set; }
         public string Escalera { get; set; }
-        public double? Piso { get; set; }
-        public double? Puerta { get; set; }
+        public string Piso { get; set; }
+        public string Puerta { get; set; }
         public string Pais { get; set; }
         public string Codigo_Postal { get; set; }
         public string Indicador_No_Residente { get; set; }
